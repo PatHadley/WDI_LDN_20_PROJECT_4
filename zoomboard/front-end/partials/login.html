@@ -1,0 +1,21 @@
+<div ng-controller="UsersController as users" layout="column" ng-cloak>
+  <md-content layout-gt-sm="row" layout-padding>
+    <div>
+      <md-input-container class="md-block">
+        <label>email address</label>
+        <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+        <input ng-model="users.email" type="email" ng-required="true">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>password</label>
+        <md-icon md-svg-src="img/icons/ic_security_24px.svg" class="password"></md-icon>
+        <input ng-model="users.password" type="password" ng-required="true">
+      </md-input-container>
+    </div>
+  </md-content>
+</div>
+
+
+
+
+

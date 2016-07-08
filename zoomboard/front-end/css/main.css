@@ -1,0 +1,7 @@
+.dumbox {
+  width: 40%;
+  min-height: 200px;
+  float: left;
+  background-color: #ccd;
+  margin: 30px;
+}

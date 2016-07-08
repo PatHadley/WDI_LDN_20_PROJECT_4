@@ -1,0 +1,33 @@
+{
+  "name": "zoomboard",
+  "main": "./js/app.js",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-resource": "^1.5.7",
+    "angular-filepicker": "^1.1.4",
+    "filepicker-js": ">=2.3.4",
+    "angular-material": "^1.0.9",
+    "angular-ui-router": "ui-router#^0.3.1",
+    "angular-messages": "ng-messages#*",
+    "zoomooz": "^1.1.6",
+    "jquery": "^3.0.0",
+    "openseadragon": "^2.2.1",
+    "angular-material-icons": "^0.7.0",
+    "angular-jwt": "^0.0.9"
+  },
+  "homepage": "https://github.com/PatHadley/WDI_LDN_20_HOMEWORK",
+  "authors": [
+    "Pat Hadley <pat@pathadley.net>"
+  ],
+  "description": "a zooming image board",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

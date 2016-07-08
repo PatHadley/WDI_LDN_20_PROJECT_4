@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="ZoomBoard">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Zooming image board">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/" />
+    <title>ZoomBoard</title>
+    <!-- PLUGINS -->
+    <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="./bower_components/filepicker-js/filepicker.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-filepicker/dist/angular_filepicker.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./bower_components/openseadragon/built-openseadragon/openseadragon/openseadragon.min.js"></script>
+    <script type="text/javascript" src="./bower_components/zoomooz/jquery.zoomooz.min.js"></script>
+    <!-- ANGULAR MODELS/CONTROLLERS -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/usersController.js"></script>
+    <script type="text/javascript" src="js/controllers/imgsController.js"></script>
+    <script type="text/javascript" src="js/controllers/tagsController.js"></script>
+
+    <!-- CSS STYLES -->
+    <link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  </head>
+  <body ng-controller="UsersController as users">
+    <header>
+      <md-content class="md-padding">
+      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">        <nav layout="row" layout-align="end center">
+          <h1>zoomboard</h1>
+          <md-button ui-sref="home">home</md-button>
+          <md-button ui-sref="register">register</md-button>
+          <md-button ui-sref="login">login</md-button>
+        </md-nav-bar>
+      </md-toolbar>
+      </md-content>
+    </header>
+    <main ui-view>
+    </main>
+    <footer>
+      <input type="filepicker" data-fp-apikey="Aaf507RcMRMid6D1ej8D1z"
+      onchange="console.log(event.fpfile)">
+    </footer>
+  </body>
+</html>
