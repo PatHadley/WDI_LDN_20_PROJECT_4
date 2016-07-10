@@ -1,0 +1,20 @@
+{
+  "name": "seadragon-test",
+  "homepage": "https://github.com/PatHadley/WDI_LDN_20_PROJECT_4",
+  "authors": [
+    "Pat Hadley <pat@pathadley.net>"
+  ],
+  "description": "Testing Openseadragon for GA Project 4",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "openseadragon": "^2.2.1"
+  }
+}

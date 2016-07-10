@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="bower_components/openseadragon/built-openseadragon/openseadragon/openseadragon.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Seadragon-Test</title>
+  </head>
+  <body>
+    <header>
+      <h1>Seadragon-Test</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div id="openseadragon1">
+        </div>
+      </div>
+    </main>
+    <footer>
+      
+    </footer>
+    <script type="text/javascript">
+      var viewer = OpenSeadragon({
+          id: "openseadragon1",
+          prefixUrl: "bower_components/openseadragon/built-openseadragon/openseadragon/images/",
+          tileSources:[{
+            type: 'image',
+            url: "bower_components/openseadragon/built-openseadragon/openseadragon/images/tests/VeniceRooftops1.JPG",
+            buildPyramid: false
+          },{
+              type: 'image',
+              url: "bower_components/openseadragon/built-openseadragon/openseadragon/images/tests/VeniceRooftops2.JPG",
+              buildPyramid: false
+          },{
+            type: 'image',
+            url: "bower_components/openseadragon/built-openseadragon/openseadragon/images/tests/VeniceRooftops3.JPG",
+            buildPyramid: false
+          }],
+          placeholderFillStyle: "#112233",
+          collectionMode: true,
+          collectionTileSize: 100,
+          collectionTileMargin: 30
+      });
+    </script>
+  </body>
+</html>
