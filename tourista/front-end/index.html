@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-ng-app="Tourista">
+  <head>
+    <meta charset="utf-8">
+    <title>tourista - your arty snap gallery</title>
+    <base href="/" />
+    <!-- Plugins -->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- Local Scripts -->
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/models/user.js"></script>
+    <script type="text/javascript" src="./js/controllers/usersController.js"></script>
+    <script type="text/javascript" src="js/services/authInterceptor.js"></script>
+    <script type="text/javascript" src="js/services/tokenService.js"></script>
+    <script type="text/javascript" src="js/services/currentUser.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
+    <main class="container" ui-view></main>
+  </body>
+</html>
