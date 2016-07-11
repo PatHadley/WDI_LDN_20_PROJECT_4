@@ -1,6 +1,7 @@
 var mongoose  = require("mongoose");
 var bcrypt    = require('bcrypt-nodejs');
 var validator = require('validator');
+var Exhibit   = require('./exhibit');
 
 var userSchema = mongoose.Schema({
   local: {

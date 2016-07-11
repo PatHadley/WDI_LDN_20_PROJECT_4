@@ -27,14 +27,17 @@ module.exports = function(passport) {
       newUser.local.password             = password;
       newUser.local.passwordConfirmation = req.body.passwordConfirmation;
 
-      newUser.save(function(err, user) {
-        // Error found
-        if (err) return done(err, false, { message: "Something went wrong." });
-
-        // New user created
-        return done(null, user);
+      newUser
+        .save()
+        .then(function(user){
+          return done(null, user);
+      })
+      .catch(function(err){
+        return done(err, false, {message: "Something went wrong!"});
       });
+    })
+    .catch(function(err){
+      return done(err, false, {message: "Something went wrong!"})
     });
-  }));
-
+})); 
 };

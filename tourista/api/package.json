@@ -9,6 +9,7 @@
   "author": "Pat Hadley (pat@pathadley.net)",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.0.0",
     "cookie-parser": "^1.0.1",
@@ -20,6 +21,7 @@
     "mongoose": "4.1.1",
     "morgan": "~1.0.0",
     "passport": "^0.2.0",
+    "password-hash": "^1.2.2",
     "passport-local": "~0.1.6",
     "validator": "^5.1.0"
   },
