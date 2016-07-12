@@ -16,10 +16,10 @@ angular
     $httpProvider.interceptors.push('authInterceptor');
   });
 
-MainRouter.$inject = ["$stateProvider", "$urlRouterProvider"];
+MainRouter.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
 
-function MainRouter($stateProvider, $urlRouterProvider) {
-
+function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
   $stateProvider
     .state('home', {
       url: "/",
