@@ -21,7 +21,7 @@ angular
   }
   
   function removeToken(){
-  
+    return $window.localStorage.removeItem("auth-token");
   }
   
   function decodeToken() {

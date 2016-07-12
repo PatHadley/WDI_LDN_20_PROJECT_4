@@ -2,10 +2,40 @@ angular
   .module('Tourista', [
     'angular-jwt',
     'ngResource',
-    'ui.router'
+    'ui.router',
+    'angular-filepicker',
+    'ngMaterial',
+    'ngMessages'
     ])
   .constant('API', 'http://localhost:3000/api')
+  .directive('fpCustomDirective', function(filepickerService){
+      return {
+          scope: {
+              options: {mimetype: "image/*"},
+              onSuccess:'&',
+              onError:'&',
+          },
+          link: function(scope, elm, attrs) {
+              scope.openPicker = openPicker;
+              scope.options = scope.options || {};
+              function openPicker(){
+                  filepickerService.pick(
+                      scope.options,
+                      function(Blob){
+                          scope.onSuccess({Blob: Blob});
+                      },
+                      function(Error){
+                          scope.onError({Error: Error});
+                      }
+                  );
+              }
+          }
+      };
+  })
   .config(MainRouter)
+  .config(function (filepickerProvider) {
+    filepickerProvider.setKey('Aaf507RcMRMid6D1ej8D1z');
+  })
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
   });
