@@ -1,0 +1,16 @@
+<h2>Users list(prof pic grid?)</h2>
+<p ng-show="!users.length">Users are bloody empty?</p>
+<div>
+<ul>
+  <li data-ng-repeat="user in users.users">
+    <ul>
+      <li>User first name</li>
+      <li>{{ user.firstName }}</li>
+      <li>User last name</li>
+      <li>{{ user.lastName }}</li>
+      <li>{{ user.email }}</li>
+    </ul>
+  </li>
+</ul>
+
+</div>

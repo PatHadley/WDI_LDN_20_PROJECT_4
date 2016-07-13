@@ -1,23 +1,23 @@
-<section data-ng-controller="UsersController as users">
+<section>
   <h2>register</h2>
-  <form id="login" name="users.registerForm" data-ng-submit="users.register()" novalidate>
+  <form id="login" name="reg.registerForm" data-ng-submit="reg.register()" novalidate>
     <div class="form-group">
       <input type="text" class="form-control" id="username" placeholder="username" data-ng-model="users.user.username">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" id="firstname" placeholder="first name" data-ng-model="users.user.firstName">
+      <input type="text" class="form-control" id="firstname" placeholder="first name" data-ng-model="reg.user.firstName">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" id="lastname" placeholder="last name" data-ng-model="users.user.lastName">
+      <input type="text" class="form-control" id="lastname" placeholder="last name" data-ng-model="reg.user.lastName">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" id="email" placeholder="email address" data-ng-model="users.user.email">
+      <input type="text" class="form-control" id="email" placeholder="email address" data-ng-model="reg.user.email">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" id="password" placeholder="password" data-ng-model="users.user.password">
+      <input type="password" class="form-control" id="password" placeholder="password" data-ng-model="reg.user.password">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" id="passwordConfirmation" placeholder="confirm your password" data-ng-model="users.user.passwordConfirmation">
+      <input type="password" class="form-control" id="passwordConfirmation" placeholder="confirm your password" data-ng-model="reg.user.passwordConfirmation">
     </div>
     <button type="submit">register</button>
   </form>

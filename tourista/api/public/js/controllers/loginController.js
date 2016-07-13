@@ -1,17 +1,17 @@
 angular
   .module('Tourista')
-  .controller("loginController", loginCtrl);
+  .controller("loginCtrl", loginCtrl);
 
-loginCtrl.$inject = ["$scope", "User", "CurrentUserService", "$state"];
-function loginCtrl($scope, User, CurrentUserService, $state){
+loginCtrl.$inject = ["$scope", "User", "CurrentUser", "$state"];
+function loginCtrl($scope, User, CurrentUser, $state){
   var vm = this;
   vm.login = function(){
     User.login(vm.user, function(data){
       var user = data.user ? data.user : null;
       if (user) {
         // $scope.$parent.main.user = user;
-        CurrentUserService.saveUser(user);
-        $state.go("usersIndex");
+        CurrentUser.saveUser(user);
+        $state.go("users");
       }
     });
   };

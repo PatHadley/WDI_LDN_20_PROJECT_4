@@ -1,6 +1,6 @@
 angular
   .module('Tourista')
-  .controller("registerController", registerCtrl);
+  .controller("registerCtrl", registerCtrl);
 
 registerCtrl.$inject = ["User", "$state"];
 function registerCtrl(User, $state){
@@ -10,7 +10,7 @@ function registerCtrl(User, $state){
       var user = data.user ? data.user : null;
       if (user) {
         CurrentUserService.getUser();
-        $state.go("usersIndex");
+        $state.go("users");
       }
     });
   };

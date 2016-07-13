@@ -19,33 +19,41 @@ angular
 MainRouter.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
 
 function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
+  
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "./js/views/home.html",
-      controller: 'GalleryCtrl'
+      templateUrl: "./js/views/home.html"
     })
     .state('login', {
       url: "/login",
       templateUrl: "./js/views/authentications/login.html",
+      controller: 'loginCtrl',
+      controllerAs: 'log'
     })
     .state('register', {
       url: "/register",
       templateUrl: "./js/views/authentications/register.html",
+      controller: 'registerCtrl',
+      controllerAs: 'reg'
     })
     .state('users', {
       url: "/users",
-      templateUrl: "./js/views/users/index.html"
+      templateUrl: "./js/views/users/index.html",
+      controller: 'UsersController',
+      controllerAs: 'users'
     })
     .state('user', {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html",
-      controller: function($scope, $stateParams, User) {
-        User.get({ id: $stateParams.id }, function(res){
-          $scope.$parent.users.user = res.user;
-        });
-      }
+      controller: 'UsersController',
+      controllerAs: 'users'
+    })
+    .state('exhibit', {
+      url: "/exhibits/:id",
+      templateUrl: "./js/views/exhibits/show.html",
+      controller: 'GalleryCtrl'
     });
 
   $urlRouterProvider.otherwise("/");
