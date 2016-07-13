@@ -8,9 +8,6 @@ function UsersController($scope, $stateParams, User, CurrentUser){
   var vm   = this;
 
   function showUser() {
-    User.get({ id: $stateParams.id }, function(res){
-      $scope.$parent.users.user = res.user;
-    });
   }
 
   function getUsers() {

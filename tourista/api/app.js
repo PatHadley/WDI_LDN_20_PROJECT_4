@@ -40,7 +40,10 @@ app.use('/api', expressJWT({ secret: config.secret })
   .unless({
     path: [
       { url: '/api/login',    methods: ['POST'] },
-      { url: '/api/register', methods: ['POST'] }
+      { url: '/api/register', methods: ['POST'] },
+      { url: '/api/users', methods: ['GET'] },
+      { url: '/api/uImages', methods: ['GET'] },
+      { url: '/api/rImages', methods: ['GET'] }
     ]
   }));
 
@@ -53,38 +56,6 @@ app.use(function (err, req, res, next) {
 
 var routes = require('./config/routes');
 app.use("/api", routes);
-
-app.post("/api/register", function(req, res, next){
-  var localStrategy = passport.authenticate('local-signup', function(err, user, info){
-    if (err) return res.status(500).json({message: 'Something went wrong!'});
-    if (info) return res.status(401).json({message: info.message});
-    var token = jwt.sign(user, config.secret, {expiresIn: 60*60*24});
-    return res.status(200).json({
-      message: "Thanks for registering.",
-      token: token,
-      user: user
-    });
-  });
-  return localStrategy(req, res, next);
-});
-
-app.post("/api/login", function(req, res, next){
-  User
-    .findOne({email: req.body.email})
-    .then(function(user){
-      if (!user) return res.status(404).json({message: "No user found"});
-      if (!user.validatePassword(req.body.password)) return res.status(403).json({message: "Wrong password dummy"});
-
-      var token = jwt.sign(user, config.secret, {expiresIn: 60*60*24});
-      return res.status(200).json({
-        message: "Welcome back!",
-        token: token,
-        user: user
-      });
-    }).catch(function(){
-      return res.status(500).json({message: "Something went wrong"});
-    });
-});
 
 app.get("/api/users", function(req, res, next){
   User.find({}).then(function(users){

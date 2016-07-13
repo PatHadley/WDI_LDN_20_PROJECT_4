@@ -5,9 +5,10 @@ var jwt      = require('jsonwebtoken');
 
 function register(req, res, next) {
   var localStrategy = passport.authenticate('local-signup', function(err, user, info) {
-    if (err) return res.status(500).json({ message: 'Something went wrong!' });
+    console.log(user);
+    if (err) return res.status(500).json({ message: 'Something went reaallly! wrong!' });
     if (info) return res.status(401).json({ message: info.message });
-    if (!user) return res.status(401).json({ message: 'User already exists!' });
+    // if (!user) return res.status(401).json({ message: 'User already exists!' });
 
     // User has authenticated so issue token
     var token = jwt.sign(user, secret, { expiresIn: 60*60*24 });

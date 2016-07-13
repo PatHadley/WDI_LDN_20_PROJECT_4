@@ -33,7 +33,18 @@ function GalleryCtrl($scope, filepickerService, $window) {
   }
 };
 
-function fpGalbuilder(filepickerService){
+fpGalbuilder.$inject = ['filepickerService', '$http'];
+
+function fpGalbuilder(filepickerService, $http){
+  var self = this;
+
+  self.uImages = [];
+
+  // self.addUImage = addUImage;
+  // self.removeUImage = removeUImage;
+
+
+
   return {
     scope: {
       options: '=',
@@ -48,6 +59,13 @@ function fpGalbuilder(filepickerService){
           scope.options,
           function(Blob){
               scope.onSuccess({Blob: Blob});
+              $http
+                .post('http://localhost:3000/api/uImages', Blob)
+                .then(function(response){
+                  self.uImages.source.push(response.Blob.url);
+                  self.uImages.title.push("testImage");
+                })
+
               console.log("blob", Blob.url);
           },
           function(Error){

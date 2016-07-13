@@ -8,6 +8,7 @@ var rImagesController = require('../controllers/rImagesContoller');
 var authenticationsController = require('../controllers/authenticationsController');
 
 router.post('/login', authenticationsController.login);
+
 router.post('/register', authenticationsController.register);
 
 router.route('/')
@@ -22,7 +23,8 @@ router.route('/users/:id')
   .delete(usersController.usersDelete);
 
 router.route('/exhibits')
-  .get(exhibitsController.exhibitsIndex);
+  .get(exhibitsController.exhibitsIndex)
+  .post(exhibitsController.exhibitsCreate);
 
 router.route('/exhibits/:id')
   .get(exhibitsController.exhibitsShow)
@@ -30,7 +32,8 @@ router.route('/exhibits/:id')
   .delete(exhibitsController.exhibitsDelete);
 
 router.route('/uImages')
-  .get(uImagesController.uImagesIndex);
+  .get(uImagesController.uImagesIndex)
+  .post(uImagesController.uImagesCreate);
 
 router.route('/uImages/:id')
   .get(uImagesController.uImagesShow)
@@ -38,10 +41,8 @@ router.route('/uImages/:id')
   .delete(uImagesController.uImagesDelete);
 
 router.route('/rImages')
-  .get(rImagesController.rImagesIndex);
-
-// router.route('/rSearch')
-//   .get(rImagesController.rImagesSearch);
+  .get(rImagesController.rImagesIndex)
+  .post(rImagesController.rImagesCreate);
 
 router.route('/rImages/:id')
   .get(rImagesController.rImagesShow)

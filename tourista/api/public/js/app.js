@@ -49,7 +49,7 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html",
       controller: 'UsersController',
-      controllerAs: 'users'
+      controllerAs: 'userlist'
     })
     .state('exhibit', {
       url: "/exhibits/:id",

@@ -11,7 +11,7 @@ function loginCtrl($scope, User, CurrentUser, $state){
       if (user) {
         // $scope.$parent.main.user = user;
         CurrentUser.saveUser(user);
-        $state.go("users");
+        $state.go("home");
       }
     });
   };
