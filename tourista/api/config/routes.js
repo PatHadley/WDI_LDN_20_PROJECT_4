@@ -40,6 +40,9 @@ router.route('/uImages/:id')
 router.route('/rImages')
   .get(rImagesController.rImagesIndex);
 
+// router.route('/rSearch')
+//   .get(rImagesController.rImagesSearch);
+
 router.route('/rImages/:id')
   .get(rImagesController.rImagesShow)
   .put(rImagesController.rImagesUpdate)

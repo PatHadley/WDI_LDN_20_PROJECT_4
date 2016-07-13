@@ -1,7 +1,7 @@
 angular
   .module('Tourista')
   .controller('GalleryCtrl', GalleryCtrl)
-  .directive('fpCustomDirective', fpCustomDirective);
+  .directive('fpGalbuilder', fpGalbuilder);
 
 GalleryCtrl.$inject = ['$scope', 'filepickerService', '$window'];
 
@@ -33,7 +33,7 @@ function GalleryCtrl($scope, filepickerService, $window) {
   }
 };
 
-function fpCustomDirective(filepickerService){
+function fpGalbuilder(filepickerService){
   return {
     scope: {
       options: '=',

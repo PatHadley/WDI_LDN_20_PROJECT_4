@@ -1,6 +1,10 @@
 var RImage = require("../models/rImage");
 var User = require("../models/user");
 
+// function rImagesSearch(req, res, query){
+  
+// }
+
 function rImagesIndex(req, res){
   RImage.find({}, function(err, rImages) {
     if (err) return res.status(404).send(err);
