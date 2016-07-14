@@ -1,11 +1,12 @@
-<div data-ng-controller="uImagesController as uImages">
-  <md-toolbar>
-      <h3 class="md-toolbar-tools">Your beautiful images</h3>
-  </md-toolbar>
-  <md-button class="md-raised md-primary" data-ng-click="uImages.fpAddUImage()">Add a snap</md-button>
-  <md-content class="md-padding" layout-xs="column" layout="row">
-    <div flex-xs flex-gt-xs="50" layout="column">
-      <md-card md-theme-watch data-ng-repeat="uImage in uImages.uImages">
+<section layout="row">
+  <div layout="column" flex data-ng-controller="uImagesController as uImages">
+    <md-toolbar>
+        <h3 class="md-toolbar-tools">Your beautiful images</h3>
+        <md-button class="md-raised" data-ng-click="uImages.fpAddUImage()">Add a snap</md-button>
+    </md-toolbar>
+    
+    <md-content class="md-padding">
+      <md-card data-ng-repeat="uImage in uImages.uImages">
         <img data-ng-src="{{uImage.source}}" class="md-card-image">
         <md-card-title>
           <md-card-title-text>
@@ -14,17 +15,15 @@
           </md-card-title-text>
         </md-card-title>
       </md-card>
-    </div>
-  </md-content>
-</div>
+    </md-content>
+  </div>
 
-<div data-ng-controller="rijksController as rijks">
-  <md-toolbar>
-      <h3 class="md-toolbar-tools">Your favourite artworks</h3>
-  </md-toolbar>
-  <md-content class="md-padding" layout-xs="column" layout="row">
-    <div flex-xs flex-gt-xs="50" layout="column">
-      <md-card md-theme-watch data-ng-repeat="rImage in rijks.rImages">
+  <div layout="column" flex data-ng-controller="rijksController as rijks">
+    <md-toolbar>
+        <h3 class="md-toolbar-tools">Your favourite artworks</h3>
+    </md-toolbar>
+    <md-content class="md-padding">
+      <md-card data-ng-repeat="rImage in rijks.rImages">
         <img data-ng-src="{{rImage.source}}" class="md-card-image">
         <md-card-title>
           <md-card-title-text>
@@ -33,40 +32,40 @@
           </md-card-title-text>
         </md-card-title>
       </md-card>
-    </div>
-  </md-content>
-</div>
+    </md-content>
+  </div>
+</section>
 
-
-<div>
-  <h2>Add a Rijksmuseum image</h2>
-  <div data-ng-controller="rijksController as rijks" ng-cloak>
-    <div>
-      <md-input-container>
-        <label>Rijksmuseum artworks</label>
-        <input id="query" type="search" data-ng-model="rijks.query">
-      </md-input-container>
-      <md-button name="rijksearch" class="md-raised md-primary" data-ng-click="rijks.search()">search</md-button>
-    </div>
-    <div>
-      <md-toolbar>
-          <h3 class="md-toolbar-tools">Rijks images</h3>
-      </md-toolbar>
-      <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column">
-          <md-card md-theme-watch data-ng-repeat="rires in rijks.rijksResults">
-            <img data-ng-src="{{rires.webImage.url}}" class="md-card-image">
-            <md-card-title data-ng-click="rijks.addRImage(rires)">
-              <md-card-title-text>
-                <span class="md-headline">{{rires.title}}</span>
-                <span class="md-subhead">{{rires.principalOrFirstMaker}}</span>
-                <span class="md-subhead">click to add</span>
-              </md-card-title-text>
-            </md-card-title>
-          </md-card>
-        </div>
-      </md-content>
+<section layout="row">
+  <div>
+    <h2>Add a Rijksmuseum image</h2>
+    <div data-ng-controller="rijksController as rijks" ng-cloak>
+      <div>
+        <md-input-container>
+          <label>Rijksmuseum artworks</label>
+          <input id="query" type="search" data-ng-model="rijks.query">
+        </md-input-container>
+        <md-button name="rijksearch" class="md-raised md-primary" data-ng-click="rijks.search()">search</md-button>
+      </div>
+      <div>
+        <md-toolbar>
+            <h3 class="md-toolbar-tools">Rijks images</h3>
+        </md-toolbar>
+        <md-content class="md-padding" layout-xs="column" layout="row">
+          <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card md-theme-watch data-ng-repeat="rires in rijks.rijksResults">
+              <img data-ng-src="{{rires.webImage.url}}" class="md-card-image">
+              <md-card-title data-ng-click="rijks.addRImage(rires)">
+                <md-card-title-text>
+                  <span class="md-headline">{{rires.title}}</span>
+                  <span class="md-subhead">{{rires.principalOrFirstMaker}}</span>
+                  <span class="md-subhead">click to add</span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+          </div>
+        </md-content>
+      </div>
     </div>
   </div>
-</div>
-
+</section>
