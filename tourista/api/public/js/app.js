@@ -24,8 +24,7 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "./js/views/home.html",
-      controller: 'GalleryCtrl'
+      templateUrl: "./js/views/home.html"
     })
     .state('login', {
       url: "/login",

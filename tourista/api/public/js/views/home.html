@@ -1,18 +1,23 @@
-<h2>Home</h2>
-<p>
-  <div fp-galbuilder options="options" on-success="onSuccess(Blob)"></div>
-</p>
-<div>
-  <div data-ng-repeat="file in files track by $index">
-    <div class="thumbnail">
-      <img data-ng-src="{{file.url | fpConvert:{w: 200} }}" alt="{{file.filename}}">
-      <div class="caption">
-        <h3>{{file.filename}}</h3>
-      </div>
+<div data-ng-controller="uImagesController as uImages">
+  <md-toolbar>
+      <h3 class="md-toolbar-tools">Your beautiful images</h3>
+  </md-toolbar>
+  <md-button class="md-raised md-primary" data-ng-click="uImages.fpAddUImage()">Add a snap</md-button>
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="50" layout="column">
+      <md-card md-theme-watch data-ng-repeat="uImage in uImages.uImages">
+        <img data-ng-src="{{uImage.source}}" class="md-card-image">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{uImage.title}}</span>
+            <span class="md-subhead">{{uImage.description}}</span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
     </div>
-  </div>
-  <h2 ng-if="files.length == 0">Add photos from your trip!</h2>
+  </md-content>
 </div>
+
 
 <div>
   <h2>Add a Rijksmuseum image</h2>
