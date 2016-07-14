@@ -58,18 +58,16 @@
             <h3 class="md-toolbar-tools">Rijks images</h3>
         </md-toolbar>
         <md-content class="md-padding" layout-xs="column" layout="row">
-          <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card md-theme-watch data-ng-repeat="rires in rijks.rijksResults">
-              <img data-ng-src="{{rires.webImage.url}}" class="md-card-image">
-              <md-card-title data-ng-click="rijks.addRImage(rires)">
-                <md-card-title-text>
-                  <span class="md-headline">{{rires.title}}</span>
-                  <span class="md-subhead">{{rires.principalOrFirstMaker}}</span>
-                  <span class="md-subhead">click to add</span>
-                </md-card-title-text>
-              </md-card-title>
-            </md-card>
-          </div>
+          <md-card md-theme-watch data-ng-repeat="rires in rijks.rijksResults">
+            <img data-ng-src="{{rires.webImage.url}}" class="md-card-image">
+            <md-card-title data-ng-click="rijks.addRImage(rires)">
+              <md-card-title-text>
+                <span class="md-headline">{{rires.title}}</span>
+                <span class="md-subhead">{{rires.principalOrFirstMaker}}</span>
+                <span class="md-subhead">click to add</span>
+              </md-card-title-text>
+            </md-card-title>
+          </md-card>
         </md-content>
       </div>
     </div>

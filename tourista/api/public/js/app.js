@@ -14,6 +14,11 @@ angular
   })
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
+  })
+  .config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue-grey')
+      .dark();
   });
 
 MainRouter.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
