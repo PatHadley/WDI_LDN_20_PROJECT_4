@@ -19,8 +19,8 @@
   <div data-ng-controller="rijksController as rijks" ng-cloak>
     <div>
       <md-input-container>
-        <label>Search Rijksmuseum artworks</label>
-        <input id="query" type="search" class="form-control" data-ng-model="rijks.query"/>
+        <label>Rijksmuseum artworks</label>
+        <input id="query" type="search" data-ng-model="rijks.query">
       </md-input-container>
       <md-button name="rijksearch" class="md-raised md-primary" data-ng-click="rijks.search()">search</md-button>
     </div>
@@ -41,15 +41,6 @@
           </md-card>
         </div>
       </md-content>
-    </div>
-    <div>
-<!--       <p ng-show="!rijks.rijksResults.length">Your artworks</p>
-      <table>
-        <tr data-ng-repeat="rImage in rijks.rijksResults">
-          <td><img data-ng-src="{{rImage.webImage.url}}"></td>
-          <td>{{rImage.longTitle}}</td>
-        </tr>        
-      </table> -->
     </div>
   </div>
 </div>

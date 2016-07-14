@@ -7,14 +7,4 @@ function UsersController($scope, $stateParams, User, CurrentUser){
 
   var vm   = this;
 
-  function showUser() {
-  }
-
-  function getUsers() {
-    User.query(function(data){
-      vm.users = data.users;
-      console.log("HELLO");
-    });
-  }
-
 }

@@ -53,17 +53,20 @@ function fpGalbuilder(filepickerService, $http){
     link: function(scope, elm, attrs) {
       scope.openPicker = openPicker;
       function openPicker(){
+        console.log("Running");
         filepickerService.pick(
           scope.options,
           function(Blob){
             scope.onSuccess({Blob: Blob});
               var newImage = {
-                title: "testImage25",
+                title: "Hey",
                 source: Blob.url,
-                description: ""
+                description: "blah blah blah"
               };
+
+              console.log(newImage);
               $http
-                .post('http://localhost:3000/api/uImages', Blob)
+                .post('http://localhost:3000/api/uImages', { uImage: newImage })
                 .then(function(response){
                   self.uImages.push(response.newImage);
                   newImage = "";

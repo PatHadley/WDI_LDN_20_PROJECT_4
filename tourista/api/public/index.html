@@ -28,6 +28,7 @@
     <script type="text/javascript" src="js/services/authInterceptor.js"></script>
     <script type="text/javascript" src="js/services/tokenService.js"></script>
     <script type="text/javascript" src="js/services/currentUser.js"></script>
+    <script type="text/javascript" src="js/factories/userFactory.js"></script>
 
     <!-- Plugin Stylesheets -->
     <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
@@ -51,7 +52,8 @@
                     <md-button class="md-raised" data-ui-sref="users">user list</md-button>
                     <md-button class="md-raised" data-ui-sref="login">log in</md-button>
                     <md-button class="md-raised" data-ui-sref="register">register</md-button>
-                    <md-button class="md-raised md-primary" ng-click="openPicker()">Add your pictures (broken)</md-button>
+                    <md-button class="md-raised md-primary" ng-click="GalleryCtrl.openPicker()">  <div fp-galbuilder options="options" on-success="onSuccess(Blob)"></div>
+</md-button>
                     <md-button class="md-raised md-primary" ng-click="RijksSearch">Add an artwork (broken)</md-button>
                 </md-content>
             </md-sidenav>
