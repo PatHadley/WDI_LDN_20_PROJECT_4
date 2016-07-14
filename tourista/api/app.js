@@ -41,9 +41,11 @@ app.use('/api', expressJWT({ secret: config.secret })
     path: [
       { url: '/api/login',    methods: ['POST'] },
       { url: '/api/register', methods: ['POST'] },
-      { url: '/api/users', methods: ['GET'] },
-      { url: '/api/uImages', methods: ['GET'] },
-      { url: '/api/rImages', methods: ['GET'] }
+      { url: '/api/users',    methods: ['GET'] },
+      { url: '/api/uImages',  methods: ['GET'] },
+      { url: '/api/uImages',  methods: ['POST'] },
+      { url: '/api/rImages',  methods: ['GET'] },
+      { url: '/api/rImages',  methods: ['POST'] }
     ]
   }));
 

@@ -11,14 +11,9 @@ function uImagesIndex(req, res){
 function uImagesCreate(req, res){
   var uImage = new UImage(req.body.uImage);
   uImage.save(function(err){
-    if (err) return res.status(500).send(err);
-    var name = req.body.uImage.user;
-    User.findOne({ name: name }, function(err, user){
-      user.uImages.push(uImage);
-      user.save(function(err, user) {
-        res.status(201).send(uImage);
-      });
-    });
+    console.log(uImage,"image was saved")
+    if (err) return res.status(500).send(err, "this error here");
+    res.status(201).send(uImage);
   });
 }
 

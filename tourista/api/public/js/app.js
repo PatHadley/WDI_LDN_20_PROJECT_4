@@ -48,8 +48,7 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('user', {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html",
-      controller: 'UsersController',
-      controllerAs: 'userlist'
+      controller: 'UsersController'
     })
     .state('exhibit', {
       url: "/exhibits/:id",

@@ -13,7 +13,7 @@ function UsersController($scope, $stateParams, User, CurrentUser){
   function getUsers() {
     User.query(function(data){
       vm.users = data.users;
-      console.log("HELLO MOFO");
+      console.log("HELLO");
     });
   }
 

@@ -58,15 +58,18 @@ function fpGalbuilder(filepickerService, $http){
         filepickerService.pick(
           scope.options,
           function(Blob){
-              scope.onSuccess({Blob: Blob});
+            scope.onSuccess({Blob: Blob});
+              var newImage = {
+                title: "testImage25",
+                source: Blob.url,
+                description: ""
+              };
               $http
                 .post('http://localhost:3000/api/uImages', Blob)
                 .then(function(response){
-                  self.uImages.source.push(response.Blob.url);
-                  self.uImages.title.push("testImage");
-                })
-
-              console.log("blob", Blob.url);
+                  self.uImages.push(response.newImage);
+                  newImage = "";
+                });
           },
           function(Error){
               scope.onError({Error: Error});

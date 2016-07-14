@@ -12,13 +12,6 @@ function rImagesCreate(req, res){
   var rImage = new RImage(req.body.rImage);
   rImage.save(function(err){
     if (err) return res.status(500).send(err);
-    var name = req.body.rImage.user;
-    User.findOne({ name: name }, function(err, user){
-      user.rImages.push(rImage);
-      user.save(function(err, user) {
-        res.status(201).send(rImage);
-      });
-    });
   });
 }
 
