@@ -34,16 +34,29 @@
     <!-- Local Stylesheets -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
-  <body>
-    <header>
-        <nav>
-            <a data-ui-sref="home">home</a>
-            <a data-ui-sref="users">user list</a>
-            <a data-ui-sref="login">log in</a>
-            <a data-ui-sref="register">register</a>
-        </nav>
-    </header>
-    <main class="container" ui-view></main>
-
+  <body layout="column" ng-cloak>
+    <section layout="row" flex>
+        <header data-ng-controller="GalleryCtrl">
+            <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')"
+            md-disable-backdrop
+            md-whiteframe="4">
+                <md-toolbar>
+                    <h1 class="md-toolbar-tools" data-ui-sref="home">Tourista</h1>
+                </md-toolbar>
+                <md-content layout-padding layout="column" layout-align="space-around stretch">
+                    <md-button class="md-raised" data-ui-sref="home">home</md-button>
+                    <md-button class="md-raised" data-ui-sref="users">user list</md-button>
+                    <md-button class="md-raised" data-ui-sref="login">log in</md-button>
+                    <md-button class="md-raised" data-ui-sref="register">register</md-button>
+                    <md-button class="md-raised md-primary" ng-click="openPicker()">Add your pictures (broken)</md-button>
+                    <md-button class="md-raised md-primary" ng-click="RijksSearch">Add an artwork (broken)</md-button>
+                </md-content>
+            </md-sidenav>
+        </header>
+        <main layout="column" layout-padding flex ui-view></main>
+    </section>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<h1>Home</h1>
+<h2>Home</h2>
 <p>
   <div fp-galbuilder options="options" on-success="onSuccess(Blob)"></div>
 </p>
@@ -16,18 +16,41 @@
 
 <div>
   <h2>Add a Rijksmuseum image</h2>
-    <div data-ng-controller="rijksController as rijks">
-      <form data-ng-submit="rijks.search()">
-        <input id="query" type="search" class="form-control" placeholder="ex. 'rembrandt'" data-ng-model="rijks.query"/>
-        <input type="submit" name="rijksearch">
-      </form>
-      <h4>Test rijksResults:</h4>
-      <p ng-show="!rijks.rijksResults.length">Results are bloody empty?</p>
+  <div data-ng-controller="rijksController as rijks" ng-cloak>
+    <div>
+      <md-input-container>
+        <label>Search Rijksmuseum artworks</label>
+        <input id="query" type="search" class="form-control" data-ng-model="rijks.query"/>
+      </md-input-container>
+      <md-button name="rijksearch" class="md-raised md-primary" data-ng-click="rijks.search()">search</md-button>
+    </div>
+    <div>
+      <md-toolbar>
+          <h3 class="md-toolbar-tools">Rijks images</h3>
+      </md-toolbar>
+      <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+          <md-card md-theme-watch data-ng-repeat="rImage in rijks.rijksResults">
+            <img data-ng-src="{{rImage.webImage.url}}" class="md-card-image">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{rImage.title}}</span>
+                <span class="md-subhead">{{rImage.principalOrFirstMaker}}</span>
+              </md-card-title-text>
+            </md-card-title>
+          </md-card>
+        </div>
+      </md-content>
+    </div>
+    <div>
+<!--       <p ng-show="!rijks.rijksResults.length">Your artworks</p>
       <table>
         <tr data-ng-repeat="rImage in rijks.rijksResults">
           <td><img data-ng-src="{{rImage.webImage.url}}"></td>
           <td>{{rImage.longTitle}}</td>
         </tr>        
-      </table>
+      </table> -->
     </div>
+  </div>
 </div>
+

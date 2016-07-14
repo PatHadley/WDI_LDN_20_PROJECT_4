@@ -43,15 +43,13 @@ function fpGalbuilder(filepickerService, $http){
   // self.addUImage = addUImage;
   // self.removeUImage = removeUImage;
 
-
-
   return {
     scope: {
       options: '=',
       onSuccess:'&',
       onError:'&',
     },
-    template: '<button class="fp__btn" ng-click="openPicker()">Pick</button>',
+    template: '<md-button class="md-raised md-primary" ng-click="openPicker()">Add an image</md-button>',
     link: function(scope, elm, attrs) {
       scope.openPicker = openPicker;
       function openPicker(){
