@@ -9,9 +9,10 @@ function rImagesIndex(req, res){
 }
 
 function rImagesCreate(req, res){
-  var rImage = new RImage(req.body.rImage);
-  rImage.save(function(err){
+  var rImage = new RImage(req.body);
+  rImage.save(function(err, image){
     if (err) return res.status(500).send(err);
+    res.status(201).send(image);
   });
 }
 

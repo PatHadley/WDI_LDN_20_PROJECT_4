@@ -2,10 +2,10 @@ var mongoose = require("mongoose");
 
 var rImageSchema = mongoose.Schema
   ({
-    title: {type: String, required: true, unique: true},
-    artist: {type: String, required: true},
-    source: {type: String, required: true},
-    link: {type: String, required: true},
+    title: {type: String},
+    artist: {type: String,},
+    source: {type: String},
+    link: {type: String},
     description: {type: String},
   });
 

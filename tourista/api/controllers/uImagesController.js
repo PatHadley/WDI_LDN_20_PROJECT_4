@@ -10,8 +10,7 @@ function uImagesIndex(req, res){
 
 function uImagesCreate(req, res){
   var uImage = new UImage(req.body);
-  console.log(uImage);
-  uImage.save(function(err,image){
+  uImage.save(function(err, image){
     if (err) return res.status(500).send(err);
     res.status(201).send(image);
   });

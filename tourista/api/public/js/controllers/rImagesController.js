@@ -2,12 +2,21 @@ angular
   .module('Tourista')
   .controller('rImagesController', rImagesController);
 
-rImagesController.$inject = ['$resource'];
+rImagesController.$inject = ['$resource', 'RImage'];
 
-function rImagesController($resource){
-  var RImage = $resource('http://localhost:3000/api/rImages/:id', {id: '@_id'});
+function rImagesController($resource, RImage){
 
   var self = this;
 
-  self.rImages = RImage.query();
+  this.getRImages = function(){
+    self.rImages = RImage.query();
+  };
+
+  this.addRImage = function(){
+    console.log('adding your arties');
+    var
+  }
+
+
+  this.getRImages
 }
