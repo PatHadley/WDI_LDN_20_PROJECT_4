@@ -1,10 +1,16 @@
 <section layout="row">
   <div layout="column" flex data-ng-controller="uImagesController as uImages">
-    <md-toolbar>
-        <h3 class="md-toolbar-tools">Your beautiful images</h3>
-        <md-button class="md-raised" data-ng-click="uImages.fpAddUImage()">Add a snap</md-button>
+    <md-toolbar md-scroll-shrink>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Your beautiful images</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-raised" data-ng-click="uImages.fpAddUImage()">
+          + add an image
+        </md-button>
+      </div>
     </md-toolbar>
-    
     <md-content class="md-padding">
       <md-card data-ng-repeat="uImage in uImages.uImages">
         <img data-ng-src="{{uImage.source}}" class="md-card-image">
@@ -19,7 +25,7 @@
   </div>
 
   <div layout="column" flex data-ng-controller="rijksController as rijks">
-    <md-toolbar>
+    <md-toolbar md-scroll-shrink>
         <h3 class="md-toolbar-tools">Your favourite artworks</h3>
     </md-toolbar>
     <md-content class="md-padding">
