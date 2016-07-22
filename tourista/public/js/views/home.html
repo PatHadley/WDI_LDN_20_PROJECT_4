@@ -1,0 +1,51 @@
+<section layout="row">
+  <div layout="column" flex data-ng-controller="uImagesController as uImages">
+    <md-toolbar md-scroll-shrink>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Your beautiful images</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-raised" data-ng-click="uImages.fpAddUImage()">
+          + add an image
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content class="md-padding">
+      <md-card data-ng-repeat="uImage in uImages.uImages">
+        <img data-ng-src="{{uImage.source}}" class="md-card-image">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{uImage.title}}</span>
+            <span class="md-subhead">{{uImage.description}}</span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </md-content>
+  </div>
+
+  <div layout="column" flex data-ng-controller="rijksController as rijks">
+    <md-toolbar md-scroll-shrink>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Your favourite artworks</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-raised" data-ng-click="rijks.showPanel($event)">
+          + add an artwork
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content class="md-padding">
+      <md-card data-ng-repeat="rImage in rijks.rImages">
+        <img data-ng-src="{{rImage.source}}" class="md-card-image">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{rImage.title}}</span>
+            <span class="md-subhead">{{rImage.artist}}</span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </md-content>
+  </div>
+</section>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="bower_components/openseadragon/built-openseadragon/openseadragon/openseadragon.js"></script>
+    <script type="text/javascript" src="openseadragon-plugins/openseadragon-justified-collection-master/dist/openseadragon-justified-collection.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>Seadragon-Test</title>
@@ -26,21 +27,46 @@
           prefixUrl: "bower_components/openseadragon/built-openseadragon/openseadragon/images/",
           tileSources:[{
             type: 'image',
-            url: "bower_components/openseadragon/built-openseadragon/openseadragon/images/tests/VeniceRooftops1.JPG",
+            url: "resources/tests/HarbourStatue1.JPG",
             buildPyramid: false
-          },{
-              type: 'image',
-              url: "bower_components/openseadragon/built-openseadragon/openseadragon/images/tests/VeniceRooftops2.JPG",
-              buildPyramid: false
           },{
             type: 'image',
-            url: "bower_components/openseadragon/built-openseadragon/openseadragon/images/tests/VeniceRooftops3.JPG",
+            url: "resources/tests/HelsinkiCathedral1.JPG",
+            buildPyramid: false
+          },{
+            type: 'image',
+            url: "resources/tests/HelsinkiMuseum1.JPG",
+
+          },{
+            type: 'image',
+            url: "resources/tests/HelsinkiStonework1.JPG",
+            buildPyramid: false
+          },{
+            type: 'image',
+            url: "resources/tests/MythEel1.JPG",
+            buildPyramid: false
+          },{
+            type: 'image',
+            url: "resources/tests/SpiritOfTheForest1.JPG",
+            buildPyramid: false
+          },{
+            type: 'image',
+            url: "resources/tests/TaigaRiver1.JPG",
+            buildPyramid: false
+          },{
+            type: 'image',
+            url: "resources/tests/VeniceRooftops1.JPG",
             buildPyramid: false
           }],
-          placeholderFillStyle: "#112233",
-          collectionMode: true,
-          collectionTileSize: 100,
-          collectionTileMargin: 30
+          viewportMargins: {top:10, left: 10, right: 10, bottom: 10}
+      });
+      viewer.addHandler('open', function() {
+          viewer.world.arrange({
+              margin:0.05,
+              columns:3,
+              showLastRow:true
+            });
+          viewer.viewport.goHome(true);
       });
     </script>
   </body>

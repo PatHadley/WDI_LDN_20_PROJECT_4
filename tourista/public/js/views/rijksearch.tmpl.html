@@ -1,0 +1,24 @@
+<div role="dialog" layout="column" layout-align="center center" data-ng-controller="rijksController as rijks" ng-cloak>
+  <md-toolbar>
+    <h3 class="md-toolbar-tools">Rijks images</h3>
+  </md-toolbar>
+  <md-input-container>
+    <label>Rijksmuseum artworks</label>
+    <input id="query" type="search" data-ng-model="rijks.query">
+  </md-input-container>
+  <md-button name="rijksearch" class="md-raised md-primary" data-ng-click="rijks.search()">search</md-button>
+  <md-content class="md-padding" layout="row">
+    <md-card data-ng-repeat="rires in rijks.rijksResults">
+      <img data-ng-src="{{rires.webImage.url}}" class="md-card-image">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{rires.title}}</span>
+          <span class="md-subhead">{{rires.principalOrFirstMaker}}</span>
+          <md-button md-autofocus flex class="md-primary" data-ng-click="rijks.addRImage(rires)">
+                add artwork
+          </md-button>
+        </md-card-title-text>
+      </md-card-title>
+    </md-card>
+  </md-content>
+</div>

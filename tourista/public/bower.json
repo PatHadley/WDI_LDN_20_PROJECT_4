@@ -1,0 +1,31 @@
+{
+  "name": "tourista",
+  "homepage": "https://github.com/PatHadley/WDI_LDN_20_PROJECT_4",
+  "authors": [
+    "Pat Hadley <pat@pathadley.net>"
+  ],
+  "description": "your arty snap gallery",
+  "main": "js/app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-filepicker": "^1.1.4",
+    "filepicker-js": ">=2.3.4",
+    "angular-material": "^1.0.9",
+    "angular-material-icons": "^0.7.0",
+    "angular-messages": "^1.5.7",
+    "angular-ui-router": "ui-router#^0.3.1",
+    "angular-jwt": "^0.0.9",
+    "angular-resource": "^1.5.7",
+    "jquery": "^3.1.0"
+  }
+}

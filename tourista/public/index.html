@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-ng-app="Tourista">
+  <head>
+    <meta charset="utf-8">
+    <title>tourista - your arty snap gallery</title>
+    <base href="/" />
+    <!-- Plugin Scripts -->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script type="text/javascript" src="bower_components/filepicker-js/filepicker.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-filepicker/dist/angular_filepicker.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- Local Scripts -->
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/controllers/registerController.js"></script>
+    <script type="text/javascript" src="./js/controllers/loginController.js"></script>
+    <script type="text/javascript" src="./js/controllers/usersController.js"></script>
+    <script type="text/javascript" src="./js/controllers/rijksController.js"></script>
+    <script type="text/javascript" src="./js/controllers/filepickerController.js"></script>
+    <script type="text/javascript" src="./js/controllers/uImagesController.js"></script>
+    <script type="text/javascript" src="js/services/authInterceptor.js"></script>
+    <script type="text/javascript" src="js/services/tokenService.js"></script>
+    <script type="text/javascript" src="js/services/currentUser.js"></script>
+    <script type="text/javascript" src="js/factories/userFactory.js"></script>
+    <script type="text/javascript" src="js/factories/uImageFactory.js"></script>
+    <script type="text/javascript" src="js/factories/rImageFactory.js"></script>
+
+    <!-- Plugin Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,600" rel="stylesheet">
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body layout="column" ng-cloak>
+    <section layout="row" flex>
+        <main layout="column" layout-padding flex ui-view></main>
+    </section>
+  </body>
+</html>

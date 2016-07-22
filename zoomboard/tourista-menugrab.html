@@ -1,0 +1,22 @@
+<header data-ng-controller="uImagesController as fpbutton">
+    <md-sidenav
+    class="md-sidenav-left"
+    md-component-id="left"
+    md-is-locked-open="$mdMedia('gt-md')"
+    md-disable-backdrop
+    md-whiteframe="4">
+        <md-toolbar>
+            <h1 class="md-toolbar-tools" data-ui-sref="home">Tourista</h1>
+        </md-toolbar>
+        <md-content layout-padding layout="column" layout-align="space-around stretch">
+            <md-button class="md-raised" data-ui-sref="home">home</md-button>
+            <md-button class="md-raised" data-ui-sref="users">user list</md-button>
+            <md-button class="md-raised" data-ui-sref="login">log in</md-button>
+            <md-button class="md-raised" data-ui-sref="register">register</md-button>
+            <md-button class="md-raised md-primary" data-ng-click="fpbutton.fpAddUImage()">Add a snap</md-button>
+
+
+            <md-button class="md-raised md-primary" ng-click="RijksSearch">Add an artwork (broken)</md-button>
+        </md-content>
+    </md-sidenav>
+</header>

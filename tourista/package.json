@@ -1,0 +1,33 @@
+{
+  "name": "tourista",
+  "version": "1.0.0",
+  "description": "Share your holiday photos alongside fine art",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pat Hadley (pat@pathadley.net)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "^1.0.1",
+    "cors": "^2.7.1",
+    "express": "~4.0.0",
+    "express-jwt": "^3.0.1",
+    "jsonwebtoken": "^5.0.5",
+    "method-override": "^1.0.2",
+    "mongoose": "4.1.1",
+    "morgan": "~1.0.0",
+    "passport": "^0.2.0",
+    "password-hash": "^1.2.2",
+    "passport-local": "~0.1.6",
+    "validator": "^5.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "'https://github.com/PatHadley/WDI_LDN_20_PROJECT_4'"
+  }
+}
